@@ -1,0 +1,6 @@
+---
+# defaults file for ansible-role-import-gpg-repo
+#
+git_repo: "https://github.com/bluk/public-gpg-keys.git"
+git_repo_local_dest: "~/public-gpg-keys"
+git_repo_dir_src: "keys"

@@ -1,0 +1,22 @@
+---
+# tasks file for ansible-role-import-gpg-repo
+- name: Clone the git repository
+  git:
+    repo: "{{ git_repo }}"
+    dest: "{{ git_repo_local_dest }}"
+    force: no
+    recursive: yes
+    # Do not update automatically
+    update: no
+- name: Find all top level files/dirs in a specified directory
+  find:
+    paths: "{{ git_repo_local_dest }}/{{ git_repo_dir_src }}"
+    patterns: "*.gpg"
+    recurse: no
+    file_type: file
+  register: files_list
+- name: Import the GPG keys
+  shell: "gpg --import {{ item.path }}"
+  register: gpg_result
+  changed_when: gpg_result.stderr.find('not changed') == -1
+  loop: "{{ files_list.files|flatten(levels=1) }}"

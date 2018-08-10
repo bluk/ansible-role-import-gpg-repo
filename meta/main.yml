@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Bryant Luk
+  role_name: import_gpg_repo
+  description: Imports public GPG keys from a git repository.
+  license: Apache
+  min_ansible_version: 2.6
+  platforms:
+    - name: MacOSX
+      versions:
+        - all
+  galaxy_tags:
+    - development
+    - system
+    - packaging
+    - gpg
+dependencies: []
