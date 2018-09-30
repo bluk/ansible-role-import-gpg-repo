@@ -19,6 +19,20 @@ Role Variables
 
 * `git_repo_dir_src` - The path in the git repository to import GPG keys from.
 
+* `git_accept_hostkey` - If the hostkey should automatically be accepted.
+
+* `git_force` - If the repository should discord changes in the directory.
+
+* `git_recursive` - If any submodules should be checked out.
+
+* `git_remote` - The name of the remote to give.
+
+* `git_update` - If the repository should be updated.
+
+* `git_verify_commit` - If the commit's GPG signature should be verified.
+
+* `git_version` - The version to checkout.
+
 Dependencies
 ------------
 
